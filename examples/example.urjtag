@@ -1,0 +1,44 @@
+signal LED0
+signal LED1
+signal LED2
+signal LED3
+signal LED4
+signal LED5
+signal LED6
+signal LED7
+signal LED8
+signal LED9
+signal LED10
+signal LED11
+signal LED12
+signal LED13
+signal LED14
+signal LED15
+
+register DIR 32
+register BR 1
+register BSR 16
+
+instruction length 4
+instruction EXTEST 0000 BSR
+instruction SAMPLE/PRELOAD 0001 BSR
+instruction BYPASS 1111 BR
+instruction IDCODE 0010 DIR
+
+bit 0 O 0 LED0
+bit 1 O 0 LED1
+bit 2 O 0 LED2
+bit 3 O 0 LED3
+bit 4 O 0 LED4
+bit 5 O 0 LED5
+bit 6 O 0 LED6
+bit 7 O 0 LED7
+bit 8 O 0 LED8
+bit 9 O 0 LED9
+bit 10 O 0 LED10
+bit 11 O 0 LED11
+bit 12 O 0 LED12
+bit 13 O 0 LED13
+bit 14 O 0 LED14
+bit 15 O 0 LED15
+

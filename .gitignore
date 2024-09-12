@@ -1,0 +1,5 @@
+build/
+.Xil/
+.venv/
+vivado.jou
+vivado.log

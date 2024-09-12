@@ -1,0 +1,36 @@
+CAPI=2:
+name: freecores:ip:jtag:1.0.0
+description: Freecores JTAG TAP and boundary scan cells.
+
+filesets:
+
+  # Common RTL for simulation and synthesis.
+  rtl:
+    files:
+      - cells/rtl/verilog/BiDirectionalCell.v
+      - cells/rtl/verilog/ControlCell.v
+      - cells/rtl/verilog/InputCell.v
+      - cells/rtl/verilog/OutputCell.v
+
+      - tap/rtl/verilog/tap_defines.v: {is_include_file: true}
+      - tap/rtl/verilog/tap_top.v
+    file_type: systemVerilogSource
+
+  rtl_example:
+    files:
+      - examples/jtag_io_control.sv
+      - examples/basys3.xdc: {file_type: xdc}
+    file_type: systemVerilogSource
+
+  
+targets:
+  default: &default
+    filesets:
+      - rtl
+      - rtl_example
+    description: Synthesize the example.
+    default_tool: vivado
+    toplevel: jtag_io_control
+    tools:
+      vivado:
+        part: xc7a35tcpg236-1
